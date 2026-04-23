@@ -1,0 +1,12 @@
+# Credentials
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Project specific
+temp_*.jpg
+p_*.jpg
+evaluation_results/
