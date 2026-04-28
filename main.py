@@ -3,9 +3,9 @@ from config import *
 from utils.logger import setup_logger
 from core.router import DocumentRouter
 from core.segmentation import BlockBuilder
-from engines.pdf_native import NativePdfProcessor
-from engines.docx_native import DocxProcessor
-from engines.ocr_engine import OcrProcessor
+from engine.pdf_native import NativePdfProcessor
+from engine.docx_native import DocxProcessor
+from engine.ocr_engine import OcrProcessor
 
 # Initialize global logger
 logger = setup_logger("MainPipeline")
@@ -64,13 +64,15 @@ def process_document(file_path):
             f.write(final_gt_content)
         
         logger.info(f"Success! Ground Truth saved to: {gt_path}")
+        return gt_path
     else:
         logger.warning(f"No text extracted for {file_name}. Ground Truth file was not created.")
+        return None
 
 def main():
     # Example: Path to your input file
     # In a real scenario, you could loop over a folder
-    input_file = "path/to/your/document.pdf" 
+    input_file = r"C:\Users\DanielShapira\git\automated-gw-generator\files\AroundTown Focused POC SOW.pdf"
     
     if os.path.exists(input_file):
         process_document(input_file)

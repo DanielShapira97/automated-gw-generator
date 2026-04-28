@@ -69,12 +69,35 @@ class BlockBuilder:
             last_y_pos = current_y_pos
             last_style = current_style
 
-        # Add the final block
-        if current_block_text:
-            blocks.append(self._format_block(current_block_text))
+        # 5. Post-Processing: Merge very small blocks (like page numbers or single headers)
+        if not blocks:
+            return ""
 
-        logger.info(f"Segmentation complete. Created {len(blocks)} blocks.")
-        return "\n\n".join(blocks)
+        merged_blocks = []
+        if blocks:
+            current_merged = blocks[0]
+            
+            for i in range(1, len(blocks)):
+                next_block = blocks[i]
+                
+                # Rule: If the current block is very short (e.g. < 60 chars), 
+                # merge it with the next one.
+                # Also strip the ==== markers for the internal check
+                clean_current = current_merged.replace("====", "").strip()
+                
+                if len(clean_current) < 60:
+                    logger.debug(f"Merging small block ({len(clean_current)} chars) into next.")
+                    # Merge by combining the text and re-wrapping
+                    combined_text = clean_current + " " + next_block.replace("====", "").strip()
+                    current_merged = self._format_block([combined_text])
+                else:
+                    merged_blocks.append(current_merged)
+                    current_merged = next_block
+            
+            merged_blocks.append(current_merged)
+
+        logger.info(f"Segmentation complete. Created {len(merged_blocks)} blocks (after merging).")
+        return "\n\n".join(merged_blocks)
 
     def _format_block(self, text_list):
         """
