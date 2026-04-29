@@ -69,6 +69,11 @@ class BlockBuilder:
             last_y_pos = current_y_pos
             last_style = current_style
 
+        # 4. Flush the final block that was being built when the loop ended
+        if current_block_text:
+            blocks.append(self._format_block(current_block_text))
+            logger.debug("Flushed the final block.")
+
         # 5. Post-Processing: Merge very small blocks (like page numbers or single headers)
         if not blocks:
             return ""

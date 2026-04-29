@@ -69,7 +69,7 @@ def extract_raw_text(input_path, doc_folder, poppler_path):
             response = client.chat.completions.create(
                 model="gpt-4o",
                 messages=[{"role": "user", "content": [
-                    {"type": "text", "text": "Transcribe ALL text from this image exactly. No data loss."},
+                    {"type": "text", "text": "Transcribe ALL text from this image exactly. No data loss. Format any tables using | and - characters to draw them. Do NOT extract text from pictures, diagrams, or charts. Do NOT describe images or pictures. No markdown formatting other than for tables."},
                     {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_img}"}}
                 ]}]
             )
@@ -83,7 +83,7 @@ def structure_into_blocks(raw_text):
     prompt = """
     Divide the text into LARGE logical blocks using ==== markers.
     1. DO NOT DELETE ANY TEXT. NO SUMMARIZING.
-    2. NO MARKDOWN symbols. Plain text only.
+    2. NO MARKDOWN symbols except for tables using | and -.
     3. Every block must start and end with ====.
     4. Return ONLY the blocks.
     """

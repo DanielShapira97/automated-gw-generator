@@ -373,3 +373,332 @@
 2026-04-28 14:03:10 | DEBUG    | Segmenter | New block started at element 644 (Reason: Font=False, Gap=True, Style=False)
 2026-04-28 14:03:10 | INFO     | Segmenter | Segmentation complete. Created 9 blocks (after merging).
 2026-04-28 14:03:10 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\fail\fail_ground_truth.txt
+2026-04-28 16:38:42 | INFO     | MainPipeline | --- Processing Started: AroundTown Focused POC SOW.pdf ---
+2026-04-28 16:38:42 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-28 16:38:42 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-28 16:38:42 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-28 16:38:42 | INFO     | NativePDF | Starting native extraction for: uploads\AroundTown Focused POC SOW.pdf
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 1...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 2...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 3...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 4...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 5...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 6...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 7...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 8...
+2026-04-28 16:38:42 | DEBUG    | NativePDF | Processing page 9...
+2026-04-28 16:38:42 | INFO     | NativePDF | Successfully extracted 437 text spans.
+2026-04-28 16:38:42 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-28 16:38:43 | INFO     | NativePDF | Extracted 11 images successfully.
+2026-04-28 16:38:43 | INFO     | Segmenter | Starting segmentation for 437 elements.
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 6 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 53 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 113 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 180 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 229 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 262 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 272 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 364 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | New block started at element 434 (Reason: Font=False, Gap=True, Style=False)
+2026-04-28 16:38:43 | DEBUG    | Segmenter | Merging small block (16 chars) into next.
+2026-04-28 16:38:43 | DEBUG    | Segmenter | Merging small block (18 chars) into next.
+2026-04-28 16:38:43 | INFO     | Segmenter | Segmentation complete. Created 7 blocks (after merging).
+2026-04-28 16:38:43 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\AroundTown Focused POC SOW\AroundTown Focused POC SOW_ground_truth.txt
+2026-04-29 09:35:29 | INFO     | MainPipeline | --- Processing Started: AroundTown Focused POC SOW.pdf ---
+2026-04-29 09:35:29 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 09:35:29 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 09:35:29 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 09:35:29 | INFO     | NativePDF | Starting native extraction for: uploads\AroundTown Focused POC SOW.pdf
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 6...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 7...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 8...
+2026-04-29 09:35:29 | DEBUG    | NativePDF | Processing page 9...
+2026-04-29 09:35:29 | INFO     | NativePDF | Successfully extracted 437 text spans.
+2026-04-29 09:35:29 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 09:35:29 | INFO     | NativePDF | Extracted 11 images successfully.
+2026-04-29 09:35:29 | INFO     | Segmenter | Starting segmentation for 437 elements.
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 6 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 53 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 113 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 180 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 229 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 262 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 272 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 364 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | New block started at element 434 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:35:29 | DEBUG    | Segmenter | Merging small block (16 chars) into next.
+2026-04-29 09:35:29 | DEBUG    | Segmenter | Merging small block (18 chars) into next.
+2026-04-29 09:35:29 | INFO     | Segmenter | Segmentation complete. Created 7 blocks (after merging).
+2026-04-29 09:35:29 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\AroundTown Focused POC SOW\AroundTown Focused POC SOW_ground_truth.txt
+2026-04-29 09:54:03 | INFO     | MainPipeline | --- Processing Started: 5 עמודים.pdf ---
+2026-04-29 09:54:03 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 09:54:03 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 09:54:03 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 09:54:03 | INFO     | NativePDF | Starting native extraction for: uploads\5 עמודים.pdf
+2026-04-29 09:54:03 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 09:54:03 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 09:54:03 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 09:54:03 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 09:54:03 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 09:54:03 | INFO     | NativePDF | Successfully extracted 184 text spans.
+2026-04-29 09:54:03 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 09:54:03 | INFO     | NativePDF | Extracted 9 images successfully.
+2026-04-29 09:54:03 | INFO     | Segmenter | Starting segmentation for 184 elements.
+2026-04-29 09:54:03 | DEBUG    | Segmenter | New block started at element 26 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 09:54:03 | DEBUG    | Segmenter | New block started at element 39 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:54:03 | DEBUG    | Segmenter | New block started at element 79 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 09:54:03 | DEBUG    | Segmenter | Merging small block (28 chars) into next.
+2026-04-29 09:54:03 | INFO     | Segmenter | Segmentation complete. Created 2 blocks (after merging).
+2026-04-29 09:54:03 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\5 עמודים\5 עמודים_ground_truth.txt
+2026-04-29 10:02:59 | INFO     | MainPipeline | --- Processing Started: 5 עמודים.pdf ---
+2026-04-29 10:02:59 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 10:02:59 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 10:02:59 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 10:02:59 | INFO     | NativePDF | Starting native extraction for: uploads\5 עמודים.pdf
+2026-04-29 10:02:59 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 10:02:59 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 10:02:59 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 10:02:59 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 10:02:59 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 10:02:59 | INFO     | NativePDF | Successfully extracted 184 text spans.
+2026-04-29 10:02:59 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 10:02:59 | INFO     | NativePDF | Extracted 9 images successfully.
+2026-04-29 10:02:59 | INFO     | Segmenter | Starting segmentation for 184 elements.
+2026-04-29 10:02:59 | DEBUG    | Segmenter | New block started at element 26 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 10:02:59 | DEBUG    | Segmenter | New block started at element 39 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:02:59 | DEBUG    | Segmenter | New block started at element 79 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:02:59 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 10:02:59 | DEBUG    | Segmenter | Merging small block (28 chars) into next.
+2026-04-29 10:02:59 | INFO     | Segmenter | Segmentation complete. Created 3 blocks (after merging).
+2026-04-29 10:02:59 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\5 עמודים\5 עמודים_ground_truth.txt
+2026-04-29 10:05:15 | INFO     | MainPipeline | --- Processing Started: fail.pdf ---
+2026-04-29 10:05:15 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 10:05:15 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 10:05:15 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 10:05:15 | INFO     | NativePDF | Starting native extraction for: uploads\fail.pdf
+2026-04-29 10:05:15 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 10:05:15 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 10:05:15 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 10:05:15 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 10:05:15 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 10:05:15 | INFO     | NativePDF | Successfully extracted 729 text spans.
+2026-04-29 10:05:15 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 10:05:15 | INFO     | NativePDF | Extracted 5 images successfully.
+2026-04-29 10:05:15 | INFO     | Segmenter | Starting segmentation for 729 elements.
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 25 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 153 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 177 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 274 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 285 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 520 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 531 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 633 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | New block started at element 644 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 10:05:15 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 10:05:15 | INFO     | Segmenter | Segmentation complete. Created 10 blocks (after merging).
+2026-04-29 10:05:15 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\fail\fail_ground_truth.txt
+2026-04-29 10:07:36 | INFO     | MainPipeline | --- Processing Started: מסמך אפיון לפרויקט  Jeen.docx ---
+2026-04-29 10:07:36 | INFO     | Router | Analyzing file extension: .docx
+2026-04-29 10:07:36 | INFO     | Router | Route identified: DOCX (Native)
+2026-04-29 10:07:36 | INFO     | NativeDOCX | Starting native extraction for: uploads\מסמך אפיון לפרויקט  Jeen.docx
+2026-04-29 10:07:36 | INFO     | NativeDOCX | Successfully extracted 118 paragraphs.
+2026-04-29 10:07:36 | INFO     | NativeDOCX | Extracting images from DOCX...
+2026-04-29 10:07:36 | INFO     | NativeDOCX | Extracted 0 images from DOCX.
+2026-04-29 10:07:36 | INFO     | Segmenter | Starting segmentation for 118 elements.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 5 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 6 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 7 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 8 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 9 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 10 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 11 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 12 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 13 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 14 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 15 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 17 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 18 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 21 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 22 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 25 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 26 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 27 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 28 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 29 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 30 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 31 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 32 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 33 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 34 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 43 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 44 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 45 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 46 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 48 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 49 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 52 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 53 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 56 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 57 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 61 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 62 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 67 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 68 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 71 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 72 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 75 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 76 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 79 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 80 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 84 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 85 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 89 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 90 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 94 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 95 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 98 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 99 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 102 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 103 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 106 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 107 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 110 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | New block started at element 111 (Reason: Font=False, Gap=False, Style=True)
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (39 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (58 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (12 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (18 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (17 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (12 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (12 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (8 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (21 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (15 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (11 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (41 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (10 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (29 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (10 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (17 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (23 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (16 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (17 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (16 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (13 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (14 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (10 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (18 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (22 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (12 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (12 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (17 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (11 chars) into next.
+2026-04-29 10:07:36 | DEBUG    | Segmenter | Merging small block (11 chars) into next.
+2026-04-29 10:07:36 | INFO     | Segmenter | Segmentation complete. Created 30 blocks (after merging).
+2026-04-29 10:07:36 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\מסמך אפיון לפרויקט  Jeen\מסמך אפיון לפרויקט  Jeen_ground_truth.txt
+2026-04-29 15:16:06 | INFO     | MainPipeline | --- Processing Started: AroundTown Focused POC SOW.pdf ---
+2026-04-29 15:16:06 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 15:16:06 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 15:16:06 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 15:16:06 | INFO     | NativePDF | Starting native extraction for: uploads\AroundTown Focused POC SOW.pdf
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 6...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 7...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 8...
+2026-04-29 15:16:06 | DEBUG    | NativePDF | Processing page 9...
+2026-04-29 15:16:06 | INFO     | NativePDF | Successfully extracted 437 text spans.
+2026-04-29 15:16:06 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 15:16:06 | INFO     | NativePDF | Extracted 11 images successfully.
+2026-04-29 15:16:06 | INFO     | Segmenter | Starting segmentation for 437 elements.
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 6 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 53 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 113 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 180 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 229 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 262 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 272 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 364 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | New block started at element 434 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:16:06 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 15:16:06 | DEBUG    | Segmenter | Merging small block (16 chars) into next.
+2026-04-29 15:16:06 | DEBUG    | Segmenter | Merging small block (18 chars) into next.
+2026-04-29 15:16:06 | INFO     | Segmenter | Segmentation complete. Created 8 blocks (after merging).
+2026-04-29 15:16:06 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\AroundTown Focused POC SOW\AroundTown Focused POC SOW_ground_truth.txt
+2026-04-29 15:24:10 | INFO     | MainPipeline | --- Processing Started: 5 עמודים.pdf ---
+2026-04-29 15:24:10 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 15:24:10 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 15:24:10 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 15:24:10 | INFO     | NativePDF | Starting native extraction for: uploads\5 עמודים.pdf
+2026-04-29 15:24:10 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 15:24:11 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 15:24:11 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 15:24:11 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 15:24:11 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 15:24:11 | INFO     | NativePDF | Successfully extracted 184 text spans.
+2026-04-29 15:24:11 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 15:24:11 | INFO     | NativePDF | Extracted 9 images successfully.
+2026-04-29 15:24:11 | INFO     | Segmenter | Starting segmentation for 184 elements.
+2026-04-29 15:24:11 | DEBUG    | Segmenter | New block started at element 26 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 15:24:11 | DEBUG    | Segmenter | New block started at element 39 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:24:11 | DEBUG    | Segmenter | New block started at element 79 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:24:11 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 15:24:11 | DEBUG    | Segmenter | Merging small block (28 chars) into next.
+2026-04-29 15:24:11 | INFO     | Segmenter | Segmentation complete. Created 3 blocks (after merging).
+2026-04-29 15:24:11 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\5 עמודים\5 עמודים_ground_truth.txt
+2026-04-29 15:25:00 | INFO     | MainPipeline | --- Processing Started: 5 עמודים.pdf ---
+2026-04-29 15:25:00 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 15:25:00 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 15:25:00 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 15:25:00 | INFO     | NativePDF | Starting native extraction for: uploads\5 עמודים.pdf
+2026-04-29 15:25:00 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 15:25:00 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 15:25:00 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 15:25:00 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 15:25:00 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 15:25:00 | INFO     | NativePDF | Successfully extracted 184 text spans.
+2026-04-29 15:25:00 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 15:25:00 | INFO     | NativePDF | Extracted 9 images successfully.
+2026-04-29 15:25:00 | INFO     | Segmenter | Starting segmentation for 184 elements.
+2026-04-29 15:25:00 | DEBUG    | Segmenter | New block started at element 26 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 15:25:00 | DEBUG    | Segmenter | New block started at element 39 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:25:00 | DEBUG    | Segmenter | New block started at element 79 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:25:00 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 15:25:00 | DEBUG    | Segmenter | Merging small block (28 chars) into next.
+2026-04-29 15:25:00 | INFO     | Segmenter | Segmentation complete. Created 3 blocks (after merging).
+2026-04-29 15:25:00 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\5 עמודים\5 עמודים_ground_truth.txt
+2026-04-29 15:27:57 | INFO     | MainPipeline | --- Processing Started: fail.pdf ---
+2026-04-29 15:27:57 | INFO     | Router | Analyzing file extension: .pdf
+2026-04-29 15:27:57 | INFO     | Router | Performing deep analysis on PDF...
+2026-04-29 15:27:57 | INFO     | Router | Route identified: PDF (Native Text)
+2026-04-29 15:27:57 | INFO     | NativePDF | Starting native extraction for: uploads\fail.pdf
+2026-04-29 15:27:57 | DEBUG    | NativePDF | Processing page 1...
+2026-04-29 15:27:57 | DEBUG    | NativePDF | Processing page 2...
+2026-04-29 15:27:57 | DEBUG    | NativePDF | Processing page 3...
+2026-04-29 15:27:57 | DEBUG    | NativePDF | Processing page 4...
+2026-04-29 15:27:57 | DEBUG    | NativePDF | Processing page 5...
+2026-04-29 15:27:57 | INFO     | NativePDF | Successfully extracted 729 text spans.
+2026-04-29 15:27:57 | INFO     | NativePDF | Extracting embedded images from PDF...
+2026-04-29 15:27:57 | INFO     | NativePDF | Extracted 5 images successfully.
+2026-04-29 15:27:57 | INFO     | Segmenter | Starting segmentation for 729 elements.
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 25 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 153 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 177 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 274 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 285 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 520 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 531 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 633 (Reason: Font=True, Gap=False, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | New block started at element 644 (Reason: Font=False, Gap=True, Style=False)
+2026-04-29 15:27:57 | DEBUG    | Segmenter | Flushed the final block.
+2026-04-29 15:27:57 | INFO     | Segmenter | Segmentation complete. Created 10 blocks (after merging).
+2026-04-29 15:27:57 | INFO     | MainPipeline | Success! Ground Truth saved to: evaluation_results\fail\fail_ground_truth.txt

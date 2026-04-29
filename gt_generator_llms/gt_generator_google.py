@@ -15,6 +15,37 @@ genai.configure(api_key=api_key)
 MODEL_NAME = 'models/gemini-3-flash-preview' 
 model = genai.GenerativeModel(MODEL_NAME)
 
+def extract_images_from_pdf(pdf_path, doc_folder):
+    """Extracts embedded images from PDF and saves them in the document folder."""
+    doc = fitz.open(pdf_path)
+    image_count = 0
+    for page_index in range(len(doc)):
+        for img_index, img in enumerate(doc.get_page_images(page_index)):
+            xref = img[0]
+            base_image = doc.extract_image(xref)
+            image_bytes = base_image["image"]
+            image_ext = base_image["ext"]
+            
+            image_count += 1
+            img_filename = f"image_{image_count}.{image_ext}"
+            with open(os.path.join(doc_folder, img_filename), "wb") as f:
+                f.write(image_bytes)
+    print(f"Extracted {image_count} images from PDF.")
+
+def extract_images_from_docx(docx_path, doc_folder):
+    """Extracts images from Word document and saves them in the document folder."""
+    doc = docx.Document(docx_path)
+    image_count = 0
+    for rel in doc.part.rels.values():
+        if "image" in rel.target_ref:
+            image_count += 1
+            img_data = rel.target_part.blob
+            ext = rel.target_ref.split('.')[-1]
+            img_filename = f"image_{image_count}.{ext}"
+            with open(os.path.join(doc_folder, img_filename), "wb") as f:
+                f.write(img_data)
+    print(f"Extracted {image_count} images from DOCX.")
+
 def get_raw_text_content(input_path, doc_folder, poppler_path):
     file_ext = os.path.splitext(input_path)[1].lower()
     raw_content = ""
@@ -25,8 +56,10 @@ def get_raw_text_content(input_path, doc_folder, poppler_path):
         for p in doc.paragraphs: raw_content += p.text + "\n"
         for t in doc.tables:
             for r in t.rows: raw_content += " | ".join([c.text.strip() for c in r.cells]) + "\n"
+        extract_images_from_docx(input_path, doc_folder)
         
     elif file_ext == ".pdf":
+        extract_images_from_pdf(input_path, doc_folder)
         doc = fitz.open(input_path)
         print(f"Total pages to process: {len(doc)}")
         
@@ -41,7 +74,7 @@ def get_raw_text_content(input_path, doc_folder, poppler_path):
             with PIL.Image.open(temp_path) as img:
                 try:
                     # Direct extraction without sleep
-                    response = model.generate_content(["Extract all text from this image exactly. No data loss.NO MARKDOWN symbols", img])
+                    response = model.generate_content(["Extract all text from this image exactly. No data loss. Format any tables using | and - characters to draw them. Do NOT extract text from pictures, diagrams, or charts. Do NOT describe images or pictures. No markdown formatting other than for tables.", img])
                     if response.text:
                         raw_content += response.text + "\n\n"
                 except Exception as e:
@@ -54,7 +87,7 @@ def get_raw_text_content(input_path, doc_folder, poppler_path):
 def structure_into_semantic_blocks(raw_text):
     if not raw_text.strip(): return "Error: No text extracted."
     print("Organizing text into logical blocks...")
-    prompt = f"Divide the text into LARGE logical blocks using ==== markers. 1. DO NOT DELETE ANY TEXT. NO SUMMARIZING. 2. NO MARKDOWN symbols!!!! Plain text only. 3. Every block must start and end with ====. 4. Return ONLY the blocks. Text:\n\n{raw_text}"
+    prompt = f"Divide the text into LARGE logical blocks using ==== markers. 1. DO NOT DELETE ANY TEXT. NO SUMMARIZING. 2. NO MARKDOWN symbols except for tables using | and -. 3. Every block must start and end with ====. 4. Return ONLY the blocks. Text:\n\n{raw_text}"
     try:
         response = model.generate_content(prompt)
         return response.text.strip()
