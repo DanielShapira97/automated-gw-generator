@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function handleSingleView(data) {
-        resultTitle.textContent = data.mode === 'classic' ? 'Extracted Text (Classic)' : 'Extracted Text (Google Gemini)';
+        resultTitle.textContent = data.mode === 'classic' ? 'Extracted Text (Classic)' : 'Extracted Text (Completion Service)';
         singleView.style.display = 'block';
         compareView.style.display = 'none';
         metricsDashboard.style.display = 'none';

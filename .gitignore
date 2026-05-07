@@ -1,4 +1,4 @@
-# Credentials
+﻿# Credentials
 .env
 
 # Python
@@ -6,7 +6,12 @@ __pycache__/
 *.py[cod]
 .venv/
 
+# Node
+node_modules/
+dist/
+
 # Project specific
 temp_*.jpg
 p_*.jpg
 evaluation_results/
+uploads/
