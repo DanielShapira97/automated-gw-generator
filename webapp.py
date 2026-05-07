@@ -6,7 +6,17 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 import main as non_llm_pipeline
-from gt_generator_llms import gt_generator_google as llm_pipeline
+from gt_generator_llms import gt_generator_google as llm_pipeline_google
+from gt_generator_llms import gt_generator_gateway as llm_pipeline_gateway
+
+
+def _llm_pipeline():
+    use_gateway = os.getenv("COMPLETIONS_API_URL", "").strip() or os.getenv(
+        "COMPLETIONS_USE_GATEWAY", ""
+    ).strip().lower() in ("1", "true", "yes")
+    if use_gateway:
+        return llm_pipeline_gateway
+    return llm_pipeline_google
 
 app = FastAPI()
 
@@ -44,7 +54,11 @@ async def process_file(
                 return p, f.read()
                 
         def run_llm():
-            p = llm_pipeline.process_document(file_path, output_base="evaluation_results", poppler=os.getenv("POPPLER_PATH"))
+            p = _llm_pipeline().process_document(
+                file_path,
+                output_base="evaluation_results",
+                poppler=os.getenv("POPPLER_PATH"),
+            )
             with open(p, "r", encoding="utf-8") as f:
                 return p, f.read()
 
