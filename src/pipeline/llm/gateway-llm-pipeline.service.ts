@@ -31,7 +31,7 @@ export class GatewayLlmPipelineService {
     fs.mkdirSync(docOutputDir, { recursive: true })
 
     const ext = path.extname(filePath).toLowerCase()
-    const rawText = await this.getRawText(filePath, ext)
+    const rawText = await this.getRawText(filePath, ext, docOutputDir)
     const finalGt = await this.structureIntoBlocks(rawText)
 
     const outPath = path.join(docOutputDir, `${docName} ground truth.txt`)
@@ -39,15 +39,17 @@ export class GatewayLlmPipelineService {
     return outPath
   }
 
-  private async getRawText(filePath: string, ext: string): Promise<string> {
+  private async getRawText(filePath: string, ext: string, outputDir: string): Promise<string> {
     if (ext === '.docx') {
+      this.docxProcessor.extractImages(filePath, outputDir)
       const elements = await this.docxProcessor.extractTextWithMetadata(filePath)
       return elements.map((e) => e.text).join('\n')
     }
 
     if (ext === '.pdf') {
+      this.pdfProcessor.extractImages(filePath, outputDir)
       const spans = await this.pdfProcessor.extractTextWithMetadata(filePath)
-      return spans.map((s) => s.text).join(' ')
+      return spans.map((s) => s.text).join('\n')
     }
 
     throw new Error(`Unsupported input format: ${ext}`)

@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const metricsDashboard = document.getElementById('metrics-dashboard');
     const diffToggle = document.getElementById('diff-toggle');
     const downloadBtn = document.getElementById('download-btn');
+    const imagesSection = document.getElementById('images-section');
+    const imagesList = document.getElementById('images-list');
     const errorMsg = document.getElementById('error-message');
     const resultTitle = document.getElementById('result-title');
     
     let selectedFile = null;
     let currentResultPath = null;
     let currentFileName = null;
+    let currentImagePaths = [];
     
     // Stored texts for toggling diffs
     let classicRawText = "";
@@ -113,11 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
         resultTitle.textContent = data.mode === 'classic' ? 'Extracted Text (Classic)' : 'Extracted Text (Completion Service)';
         singleView.style.display = 'block';
         compareView.style.display = 'none';
-        metricsDashboard.style.display = 'none';
+        metricsDashboard.style.display = 'block';
+        document.getElementById('m-classic-words').textContent = data.mode === 'classic' ? countWords(data.content) : '-';
+        document.getElementById('m-llm-words').textContent = data.mode === 'llm' ? countWords(data.content) : '-';
+        document.getElementById('m-classic-blocks').textContent = data.mode === 'classic' ? countBlocks(data.content) : '-';
+        document.getElementById('m-llm-blocks').textContent = data.mode === 'llm' ? countBlocks(data.content) : '-';
         
         resultText.value = data.content;
         currentResultPath = data.result_path;
         currentFileName = data.filename;
+        currentImagePaths = data.image_paths || [];
+        renderImageLinksSingle(currentImagePaths);
         downloadBtn.style.display = 'inline-flex';
     }
 
@@ -130,6 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         classicRawText = data.classic_content || '';
         llmRawText = data.llm_content || '';
+        currentImagePaths = [...(data.classic_image_paths || []), ...(data.llm_image_paths || [])];
+        renderImageLinksCompare(data.classic_image_paths || [], data.llm_image_paths || []);
 
         // Calculate Metrics
         document.getElementById('m-classic-words').textContent = countWords(classicRawText);
@@ -210,5 +221,69 @@ document.addEventListener('DOMContentLoaded', () => {
     function showError(message) {
         errorMsg.textContent = message;
         errorMsg.style.display = 'block';
+    }
+
+    function renderImageLinksSingle(paths) {
+        imagesList.innerHTML = '';
+        const deduped = Array.from(new Set(paths || []));
+        if (!deduped.length) {
+            imagesSection.style.display = 'none';
+            return;
+        }
+
+        imagesSection.style.display = 'block';
+        const title = document.createElement('div');
+        title.textContent = 'Single mode images';
+        title.style.fontWeight = '600';
+        title.style.marginBottom = '8px';
+        imagesList.appendChild(title);
+
+        deduped.forEach((imgPath, index) => {
+            imagesList.appendChild(createImageDownloadLink(imgPath, `Download image ${index + 1}`));
+        });
+    }
+
+    function renderImageLinksCompare(classicPaths, llmPaths) {
+        imagesList.innerHTML = '';
+        const classic = Array.from(new Set(classicPaths || []));
+        const llm = Array.from(new Set(llmPaths || []));
+        if (!classic.length && !llm.length) {
+            imagesSection.style.display = 'none';
+            return;
+        }
+
+        imagesSection.style.display = 'block';
+        if (classic.length) {
+            const classicTitle = document.createElement('div');
+            classicTitle.textContent = 'Classic images';
+            classicTitle.style.fontWeight = '600';
+            classicTitle.style.marginBottom = '8px';
+            imagesList.appendChild(classicTitle);
+            classic.forEach((imgPath, index) => {
+                imagesList.appendChild(createImageDownloadLink(imgPath, `Download classic image ${index + 1}`));
+            });
+        }
+
+        if (llm.length) {
+            const llmTitle = document.createElement('div');
+            llmTitle.textContent = 'Completion images';
+            llmTitle.style.fontWeight = '600';
+            llmTitle.style.marginTop = '8px';
+            llmTitle.style.marginBottom = '8px';
+            imagesList.appendChild(llmTitle);
+            llm.forEach((imgPath, index) => {
+                imagesList.appendChild(createImageDownloadLink(imgPath, `Download completion image ${index + 1}`));
+            });
+        }
+    }
+
+    function createImageDownloadLink(imgPath, text) {
+            const link = document.createElement('a');
+            link.href = `/api/download?path=${encodeURIComponent(imgPath)}`;
+            link.textContent = text;
+            link.style.display = 'inline-block';
+            link.style.marginRight = '12px';
+            link.style.marginBottom = '8px';
+            return link;
     }
 });

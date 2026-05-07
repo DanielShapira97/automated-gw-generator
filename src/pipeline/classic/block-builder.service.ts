@@ -4,11 +4,10 @@ import { ExtractedElement } from '../../types/extracted-element'
 @Injectable()
 export class BlockBuilderService {
   private readonly logger = new Logger(BlockBuilderService.name)
+  private readonly fontSizeThreshold = 12.0
+  private readonly yDistanceThreshold = 150.0
 
-  constructor(
-    private readonly fontSizeThreshold = 12.0,
-    private readonly yDistanceThreshold = 150.0
-  ) {}
+  constructor() {}
 
   segmentElements(elements: ExtractedElement[]): string {
     if (!elements.length) {
@@ -73,6 +72,6 @@ export class BlockBuilderService {
   }
 
   private formatBlock(textList: string[]): string {
-    return `====\n${textList.join(' ')}\n====`
+    return `====\n${textList.join('\n')}\n====`
   }
 }

@@ -46,12 +46,20 @@ export class AppController {
 
     const runClassic = async () => {
       const resultPath = await this.classicPipeline.processDocument(uploadPath)
-      return { resultPath, content: fs.readFileSync(resultPath, 'utf-8') }
+      return {
+        resultPath,
+        content: fs.readFileSync(resultPath, 'utf-8'),
+        imagePaths: this.listImages(path.dirname(resultPath))
+      }
     }
 
     const runLlm = async () => {
       const resultPath = await this.llmPipeline.processDocument(uploadPath)
-      return { resultPath, content: fs.readFileSync(resultPath, 'utf-8') }
+      return {
+        resultPath,
+        content: fs.readFileSync(resultPath, 'utf-8'),
+        imagePaths: this.listImages(path.dirname(resultPath))
+      }
     }
 
     if (mode === 'compare') {
@@ -63,7 +71,9 @@ export class AppController {
         classic_content: classic.content,
         llm_content: llm.content,
         classic_path: classic.resultPath,
-        llm_path: llm.resultPath
+        llm_path: llm.resultPath,
+        classic_image_paths: classic.imagePaths,
+        llm_image_paths: llm.imagePaths
       }
     }
 
@@ -74,7 +84,8 @@ export class AppController {
         mode: 'llm',
         content: llm.content,
         filename: path.basename(llm.resultPath),
-        result_path: llm.resultPath
+        result_path: llm.resultPath,
+        image_paths: llm.imagePaths
       }
     }
 
@@ -84,7 +95,8 @@ export class AppController {
       mode: 'classic',
       content: classic.content,
       filename: path.basename(classic.resultPath),
-      result_path: classic.resultPath
+      result_path: classic.resultPath,
+      image_paths: classic.imagePaths
     }
   }
 
@@ -94,5 +106,17 @@ export class AppController {
       return res.status(404).json({ error: 'File not found' })
     }
     return res.download(filePath, path.basename(filePath))
+  }
+
+  private listImages(folderPath: string): string[] {
+    if (!fs.existsSync(folderPath)) {
+      return []
+    }
+
+    const imageExt = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.tif', '.tiff'])
+    return fs
+      .readdirSync(folderPath)
+      .filter((fileName) => imageExt.has(path.extname(fileName).toLowerCase()))
+      .map((fileName) => path.join(folderPath, fileName))
   }
 }

@@ -5,7 +5,7 @@ import { appConfig } from './config/app-config'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true })
-  app.useStaticAssets('static', { prefix: '/static' })
+  ;(app as any).useStaticAssets('static', { prefix: '/static' })
   await app.listen(appConfig.port)
   // eslint-disable-next-line no-console
   console.log(`NestJS server running on http://localhost:${appConfig.port}`)

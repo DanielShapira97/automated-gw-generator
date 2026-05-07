@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common'
+import { spawnSync } from 'child_process'
 import { ExtractedElement } from '../../types/extracted-element'
 
 @Injectable()
@@ -38,8 +39,65 @@ export class PdfNativeProcessorService {
     return output
   }
 
-  extractImages(_pdfPath: string, _outputFolder: string): number {
-    this.logger.log('PDF image extraction is skipped in NestJS classic path.')
-    return 0
+  extractImages(pdfPath: string, outputFolder: string): number {
+    // Reuse the existing Python/PyMuPDF extraction path already used in this repo's
+    // original implementation, so PDF embedded images are saved for download.
+    const py = `
+import json, os, sys
+try:
+    import fitz
+except Exception:
+    print(json.dumps({"ok": False, "count": 0, "error": "PyMuPDF not installed"}))
+    sys.exit(0)
+
+pdf_path = sys.argv[1]
+out_dir = sys.argv[2]
+os.makedirs(out_dir, exist_ok=True)
+count = 0
+try:
+    doc = fitz.open(pdf_path)
+    for page_index in range(len(doc)):
+        for img in doc.get_page_images(page_index):
+            xref = img[0]
+            base = doc.extract_image(xref)
+            ext = base.get("ext", "bin")
+            data = base.get("image", b"")
+            count += 1
+            out_path = os.path.join(out_dir, f"pdf_img_{page_index+1}_{count}.{ext}")
+            with open(out_path, "wb") as f:
+                f.write(data)
+    doc.close()
+    print(json.dumps({"ok": True, "count": count}))
+except Exception as e:
+    print(json.dumps({"ok": False, "count": count, "error": str(e)}))
+`
+
+    const run = spawnSync('python', ['-c', py, pdfPath, outputFolder], {
+      encoding: 'utf-8'
+    })
+
+    if (run.error) {
+      this.logger.warn(`PDF image extraction failed to start Python: ${run.error.message}`)
+      return 0
+    }
+
+    const output = (run.stdout ?? '').trim().split(/\r?\n/).filter(Boolean).pop()
+    if (!output) {
+      this.logger.warn('PDF image extraction returned no output.')
+      return 0
+    }
+
+    try {
+      const parsed = JSON.parse(output) as { ok: boolean; count: number; error?: string }
+      if (!parsed.ok) {
+        this.logger.warn(`PDF image extraction warning: ${parsed.error ?? 'unknown error'}`)
+      } else {
+        this.logger.log(`Extracted ${parsed.count} images from PDF.`)
+      }
+      return Number(parsed.count ?? 0)
+    } catch {
+      this.logger.warn(`PDF image extraction returned non-JSON output: ${output}`)
+      return 0
+    }
   }
 }
