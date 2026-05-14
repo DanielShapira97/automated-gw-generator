@@ -59,6 +59,15 @@
             <div id="error-message" class="error-msg" style="display: none;"></div>
         </div>
 
+        <div id="upload-preview-card" class="card glass-panel" style="display: none;">
+            <h3 class="upload-preview-title">Source preview</h3>
+            <p id="upload-preview-hint" class="upload-preview-hint"></p>
+            <div id="upload-preview-pdf-wrap" class="upload-preview-pdf-wrap" style="display: none;">
+                <embed id="upload-preview-pdf" class="upload-preview-pdf" type="application/pdf" title="PDF preview" />
+            </div>
+            <iframe id="upload-preview-docx-frame" class="upload-preview-docx-frame" style="display: none;" title="DOCX preview" sandbox=""></iframe>
+        </div>
+
         <!-- Metrics Dashboard (Only shown in Compare Mode) -->
         <div id="metrics-dashboard" class="card glass-panel" style="display: none;">
             <div class="metrics-header">
@@ -102,6 +111,11 @@
                     </svg>
                     Download .txt
                 </button>
+                <button id="save-gw-btn" type="button" class="secondary-btn" style="display: none;">Save to server</button>
+                <div id="compare-download-row" class="compare-download-row" style="display: none;">
+                    <a id="compare-download-classic" class="secondary-btn" href="#">Download classic .txt</a>
+                    <a id="compare-download-llm" class="secondary-btn" href="#">Download completion .txt</a>
+                </div>
             </div>
             <div id="images-section" style="display: none; margin-bottom: 12px;">
                 <h3 style="margin-bottom: 8px;">Extracted Images</h3>
@@ -110,6 +124,15 @@
             <!-- Single View -->
             <div class="result-content" id="single-view">
                 <textarea id="result-text" readonly></textarea>
+                <div id="gw-editor-panel" class="gw-editor-panel" style="display: none;">
+                    <p class="gw-editor-help">Select text inside a block, then use the actions below to split or merge blocks.</p>
+                    <div class="gw-editor-toolbar">
+                        <button type="button" id="gw-split-block" class="gw-toolbar-btn">New block at selection</button>
+                        <button type="button" id="gw-merge-prev" class="gw-toolbar-btn">Merge with previous</button>
+                        <button type="button" id="gw-merge-next" class="gw-toolbar-btn">Merge with next</button>
+                    </div>
+                    <div id="gw-blocks-container" class="gw-blocks-container"></div>
+                </div>
             </div>
             <!-- Compare View -->
             <div class="result-content compare-view" id="compare-view" style="display: none;">
@@ -117,9 +140,20 @@
                     <h3>Classic Engine</h3>
                     <div id="classic-result-box" class="compare-box"></div>
                 </div>
-                <div class="compare-pane">
+                <div class="compare-pane compare-pane-llm">
                     <h3>Completion Service Engine</h3>
                     <div id="llm-result-box" class="compare-box"></div>
+                    <button type="button" id="toggle-gw-compare-editor" class="secondary-btn gw-toggle-btn">Edit completion GW as blocks</button>
+                    <div id="gw-editor-compare-panel" class="gw-editor-panel gw-editor-compare" style="display: none;">
+                        <p class="gw-editor-help">Completion output only. Select text in a block to split or merge.</p>
+                        <div class="gw-editor-toolbar">
+                            <button type="button" id="gw-split-block-compare" class="gw-toolbar-btn">New block at selection</button>
+                            <button type="button" id="gw-merge-prev-compare" class="gw-toolbar-btn">Merge with previous</button>
+                            <button type="button" id="gw-merge-next-compare" class="gw-toolbar-btn">Merge with next</button>
+                        </div>
+                        <div id="gw-blocks-container-compare" class="gw-blocks-container"></div>
+                        <button type="button" id="download-llm-edited-compare" class="secondary-btn gw-download-edited">Download edited completion .txt</button>
+                    </div>
                 </div>
             </div>
         </div>

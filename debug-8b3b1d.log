@@ -1,0 +1,2 @@
+{"sessionId":"8b3b1d","hypothesisId":"H4","location":"completion-service.client.ts:generateAnswer:pre","message":"completion request start","data":{"completionUrl":"https://completion-service.stg.jeenai.app/api/v1/completions","modelId":"gpt-4o","allowFallback":false,"promptChars":10297,"messageCount":1},"runId":"post-host-fix"}
+{"sessionId":"8b3b1d","hypothesisId":"H3","location":"completion-service.client.ts:generateAnswer:ok","message":"completion success","data":{"outputChars":7964}}

@@ -12,7 +12,11 @@ import { PdfNativeProcessorService } from './pipeline/classic/pdf-native-process
 import { GatewayLlmPipelineService } from './pipeline/llm/gateway-llm-pipeline.service'
 
 @Module({
-  imports: [HttpModule],
+  imports: [
+    HttpModule.register({
+      timeout: Number(process.env.COMPLETION_HTTP_TIMEOUT_MS ?? 120000)
+    })
+  ],
   controllers: [AppController],
   providers: [
     {

@@ -43,7 +43,7 @@ export class PdfNativeProcessorService {
     // Reuse the existing Python/PyMuPDF extraction path already used in this repo's
     // original implementation, so PDF embedded images are saved for download.
     const py = `
-import json, os, sys
+import hashlib, json, os, sys
 try:
     import fitz
 except Exception:
@@ -53,7 +53,8 @@ except Exception:
 pdf_path = sys.argv[1]
 out_dir = sys.argv[2]
 os.makedirs(out_dir, exist_ok=True)
-count = 0
+seen = set()
+written = 0
 try:
     doc = fitz.open(pdf_path)
     for page_index in range(len(doc)):
@@ -62,14 +63,18 @@ try:
             base = doc.extract_image(xref)
             ext = base.get("ext", "bin")
             data = base.get("image", b"")
-            count += 1
-            out_path = os.path.join(out_dir, f"pdf_img_{page_index+1}_{count}.{ext}")
+            h = hashlib.sha256(data).hexdigest()
+            if h in seen:
+                continue
+            seen.add(h)
+            out_path = os.path.join(out_dir, f"img_{h[:16]}.{ext}")
             with open(out_path, "wb") as f:
                 f.write(data)
+            written += 1
     doc.close()
-    print(json.dumps({"ok": True, "count": count}))
+    print(json.dumps({"ok": True, "count": written}))
 except Exception as e:
-    print(json.dumps({"ok": False, "count": count, "error": str(e)}))
+    print(json.dumps({"ok": False, "count": written, "error": str(e)}))
 `
 
     const run = spawnSync('python', ['-c', py, pdfPath, outputFolder], {

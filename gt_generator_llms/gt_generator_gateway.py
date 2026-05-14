@@ -3,7 +3,7 @@ Ground-truth pipeline using the Jeenai completion HTTP API (same contract as
 completion-service.client.ts: minimal JSON body, messages with type "message",
 response field outputText).
 
-Default URL: https://completion.stg.jeenai.app/api/v1/completions (override with
+Default URL: https://completion-service.stg.jeenai.app/api/v1/completions (override with
 COMPLETIONS_API_URL). Optional: COMPLETIONS_MODEL, COMPLETIONS_BEARER_TOKEN.
 For the FastAPI webapp, set COMPLETIONS_USE_GATEWAY=1 or COMPLETIONS_API_URL.
 """

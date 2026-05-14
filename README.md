@@ -13,7 +13,7 @@ completion model endpoint.
 ## Completion Service
 Default completion URL:
 
-`https://completion.stg.jeenai.app/api/v1/completions`
+`https://completion-service.stg.jeenai.app/api/v1/completions`
 
 Override with:
 

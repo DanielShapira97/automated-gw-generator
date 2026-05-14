@@ -15,7 +15,7 @@ from typing import Any
 import httpx
 
 # Staging URL from your Swagger; override with COMPLETIONS_API_URL if needed.
-DEFAULT_COMPLETIONS_API_URL = "https://completion.stg.jeenai.app/api/v1/completions"
+DEFAULT_COMPLETIONS_API_URL = "https://completion-service.stg.jeenai.app/api/v1/completions"
 
 
 def _parts_from_content(raw: Any) -> list[dict[str, Any]]:

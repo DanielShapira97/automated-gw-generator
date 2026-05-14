@@ -19,7 +19,7 @@ export const appConfig: AppConfig = {
   port: Number(process.env.PORT ?? 8000),
   outputBaseDir: process.env.OUTPUT_FOLDER ?? 'evaluation_results',
   uploadsDir: process.env.UPLOAD_DIR ?? 'uploads',
-  completionBaseUrl: process.env.COMPLETIONS_API_URL ?? 'https://completion.stg.jeenai.app',
+  completionBaseUrl: process.env.COMPLETIONS_API_URL ?? 'https://completion-service.stg.jeenai.app',
   completionModel: process.env.COMPLETIONS_MODEL ?? 'gpt-4o',
   completionFallbackEnabled: (process.env.COMPLETION_FALLBACK_ENABLED ?? 'true').toLowerCase() === 'true'
 }

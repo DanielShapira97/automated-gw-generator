@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common'
 import AdmZip from 'adm-zip'
+import { createHash } from 'crypto'
 import * as fs from 'fs'
 import * as path from 'path'
 import mammoth from 'mammoth'
@@ -55,17 +56,24 @@ export class DocxProcessorService {
     this.logger.log('Extracting DOCX images...')
     const zip = new AdmZip(docxPath)
     const entries = zip.getEntries().filter((entry) => entry.entryName.startsWith('word/media/'))
-    let imageCount = 0
+    const seenHashes = new Set<string>()
+    let written = 0
 
     for (const entry of entries) {
+      const buf = entry.getData()
+      const hash = createHash('sha256').update(buf).digest('hex')
+      if (seenHashes.has(hash)) {
+        continue
+      }
+      seenHashes.add(hash)
       const ext = path.extname(entry.entryName) || '.bin'
-      imageCount += 1
-      const out = path.join(outputFolder, `docx_img_${imageCount}${ext}`)
-      fs.writeFileSync(out, entry.getData())
+      const out = path.join(outputFolder, `img_${hash.slice(0, 16)}${ext}`)
+      fs.writeFileSync(out, buf)
+      written += 1
     }
 
-    this.logger.log(`Extracted ${imageCount} images from DOCX.`)
-    return imageCount
+    this.logger.log(`Extracted ${written} unique images from DOCX (${entries.length} media entries).`)
+    return written
   }
 
   private drawTableFromHtml(tableHtml: string): string {
